@@ -43,6 +43,9 @@ class RegulatoryChangeServiceCachingTimingTest {
     @MockBean
     private RegulatoryChangeRepository regulatoryChangeRepository;
 
+    @MockBean
+    private NotificationEmailService notificationEmailService;
+
     @BeforeEach
     void setUp() {
         RegulatoryChange entity = new RegulatoryChange();

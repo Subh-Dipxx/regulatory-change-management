@@ -28,9 +28,14 @@ public class RegulatoryChangeServiceImpl implements RegulatoryChangeService {
     private static final Set<String> ALLOWED_PRIORITY = Set.of("LOW", "MEDIUM", "HIGH", "CRITICAL");
 
     private final RegulatoryChangeRepository regulatoryChangeRepository;
+    private final NotificationEmailService notificationEmailService;
 
-    public RegulatoryChangeServiceImpl(RegulatoryChangeRepository regulatoryChangeRepository) {
+    public RegulatoryChangeServiceImpl(
+            RegulatoryChangeRepository regulatoryChangeRepository,
+            NotificationEmailService notificationEmailService
+    ) {
         this.regulatoryChangeRepository = regulatoryChangeRepository;
+        this.notificationEmailService = notificationEmailService;
     }
 
     @Override
@@ -50,6 +55,7 @@ public class RegulatoryChangeServiceImpl implements RegulatoryChangeService {
         RegulatoryChange regulatoryChange = new RegulatoryChange();
         mapRequestToEntity(request, regulatoryChange);
         RegulatoryChange saved = regulatoryChangeRepository.save(regulatoryChange);
+        notificationEmailService.sendCreateNotification(saved);
         return mapToResponse(saved);
     }
 

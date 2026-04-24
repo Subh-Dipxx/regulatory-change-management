@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Regulatory Change Created</title>
+</head>
+<body>
+<h2>New Regulatory Change Created</h2>
+<p>A new regulatory change has been created in the system.</p>
+
+<ul>
+    <li><strong>ID:</strong> <span th:text="${change.id}">1</span></li>
+    <li><strong>Title:</strong> <span th:text="${change.title}">Title</span></li>
+    <li><strong>Source:</strong> <span th:text="${change.source}">Source</span></li>
+    <li><strong>Jurisdiction:</strong> <span th:text="${change.jurisdiction}">Jurisdiction</span></li>
+    <li><strong>Category:</strong> <span th:text="${change.category}">Category</span></li>
+    <li><strong>Status:</strong> <span th:text="${change.status}">Status</span></li>
+    <li><strong>Priority:</strong> <span th:text="${change.priority}">Priority</span></li>
+    <li><strong>Effective Date:</strong> <span th:text="${change.effectiveDate}">2026-05-01</span></li>
+</ul>
+
+<p>Generated at: <span th:text="${generatedAt}">2026-04-24T12:00:00</span></p>
+</body>
+</html>

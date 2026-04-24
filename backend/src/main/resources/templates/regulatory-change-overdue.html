@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Overdue Regulatory Changes</title>
+</head>
+<body>
+<h2>Overdue Regulatory Changes Alert</h2>
+<p>Total overdue items: <strong th:text="${count}">0</strong></p>
+
+<table border="1" cellpadding="6" cellspacing="0">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Priority</th>
+        <th>Effective Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="change : ${changes}">
+        <td th:text="${change.id}">1</td>
+        <td th:text="${change.title}">Title</td>
+        <td th:text="${change.status}">IN_PROGRESS</td>
+        <td th:text="${change.priority}">HIGH</td>
+        <td th:text="${change.effectiveDate}">2026-03-01</td>
+    </tr>
+    </tbody>
+</table>
+
+<p>Generated at: <span th:text="${generatedAt}">2026-04-24T12:00:00</span></p>
+</body>
+</html>
