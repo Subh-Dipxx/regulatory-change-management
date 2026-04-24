@@ -1,6 +1,8 @@
 package com.internship.tool.exception;
 
-public class InputValidationException extends RuntimeException {
+import jakarta.validation.ValidationException;
+
+public class InputValidationException extends ValidationException {
 
     public InputValidationException(String message) {
         super(message);

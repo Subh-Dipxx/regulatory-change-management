@@ -1,6 +1,7 @@
 package com.internship.tool.exception;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.ValidationException;
 import java.time.LocalDateTime;
 import java.util.stream.Collectors;
 import org.springframework.http.HttpStatus;
@@ -18,8 +19,8 @@ public class GlobalExceptionHandler {
         return build(HttpStatus.NOT_FOUND, exception.getMessage(), request.getRequestURI());
     }
 
-    @ExceptionHandler(InputValidationException.class)
-    public ResponseEntity<ApiErrorResponse> handleBadRequest(InputValidationException exception, HttpServletRequest request) {
+    @ExceptionHandler(ValidationException.class)
+    public ResponseEntity<ApiErrorResponse> handleBadRequest(ValidationException exception, HttpServletRequest request) {
         return build(HttpStatus.BAD_REQUEST, exception.getMessage(), request.getRequestURI());
     }
 
