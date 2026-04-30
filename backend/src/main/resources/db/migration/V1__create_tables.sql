@@ -7,6 +7,7 @@ CREATE TABLE regulatory_changes (
     category VARCHAR(120) NOT NULL,
     status VARCHAR(40) NOT NULL,
     priority VARCHAR(40) NOT NULL,
+    score INT,
     effective_date DATE,
     published_date DATE,
     created_at TIMESTAMP NOT NULL,

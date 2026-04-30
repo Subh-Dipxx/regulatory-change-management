@@ -44,6 +44,9 @@ public class RegulatoryChange {
     @Column(name = "priority", nullable = false, length = 40)
     private String priority;
 
+    @Column(name = "score")
+    private Integer score;
+
     @Column(name = "effective_date")
     private LocalDate effectiveDate;
 
@@ -120,6 +123,14 @@ public class RegulatoryChange {
 
     public void setPriority(String priority) {
         this.priority = priority;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
     }
 
     public LocalDate getEffectiveDate() {

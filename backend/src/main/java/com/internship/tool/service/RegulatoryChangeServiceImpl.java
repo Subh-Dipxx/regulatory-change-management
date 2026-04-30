@@ -170,6 +170,7 @@ public class RegulatoryChangeServiceImpl implements RegulatoryChangeService {
         entity.setCategory(normalize(request.getCategory()));
         entity.setStatus(normalize(request.getStatus()).toUpperCase());
         entity.setPriority(normalize(request.getPriority()).toUpperCase());
+        entity.setScore(null);
         entity.setEffectiveDate(request.getEffectiveDate());
         entity.setPublishedDate(request.getPublishedDate());
     }
@@ -184,6 +185,7 @@ public class RegulatoryChangeServiceImpl implements RegulatoryChangeService {
         response.setCategory(entity.getCategory());
         response.setStatus(entity.getStatus());
         response.setPriority(entity.getPriority());
+        response.setScore(entity.getScore());
         response.setEffectiveDate(entity.getEffectiveDate());
         response.setPublishedDate(entity.getPublishedDate());
         response.setCreatedAt(entity.getCreatedAt());

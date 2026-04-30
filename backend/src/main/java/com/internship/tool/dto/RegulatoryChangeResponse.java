@@ -23,6 +23,8 @@ public class RegulatoryChangeResponse {
     private String status;
     @Schema(example = "HIGH")
     private String priority;
+    @Schema(example = "87", description = "Demo score from 0 to 100")
+    private Integer score;
     @Schema(example = "2026-05-01", format = "date")
     private LocalDate effectiveDate;
     @Schema(example = "2026-04-25", format = "date")
@@ -94,6 +96,14 @@ public class RegulatoryChangeResponse {
 
     public void setPriority(String priority) {
         this.priority = priority;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
     }
 
     public LocalDate getEffectiveDate() {
